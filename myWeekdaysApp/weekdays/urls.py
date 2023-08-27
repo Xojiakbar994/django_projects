@@ -1,8 +1,5 @@
 from django.urls import path
-from .views import WeekdaysEn
-from .views import WeekdaysUz
-from .views import WeekdaysRu
-
+from .views import WeekdaysEn, WeekdaysUz, WeekdaysRu
 
 urlpatterns = [
     path ('/en', WeekdaysEn, name='weekdays/en'),

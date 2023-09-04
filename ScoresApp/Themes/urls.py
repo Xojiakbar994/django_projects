@@ -1,6 +1,6 @@
 from django.urls import path
-from .views import theme_lessons
+from .views import ShowLessonsViev
 
 urlpatterns = [
-    path('themes/', theme_lessons, name='darslar'),
+    path('', ShowLessonsViev, name='themes'),
 ]

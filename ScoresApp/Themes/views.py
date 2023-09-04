@@ -2,6 +2,8 @@ from django.shortcuts import render
 from .models import Lessons
 
 # Create your views here.
-def theme_lessons(request):
-    value = Lessons.objects.all()
-    return render(request, 'dars.html', {'value': value})
+def ShowLessonsViev(request):
+    context = {}
+    lessons = Lessons.objects.all()
+    context['lessons'] = lessons
+    return render(request, 'dars.html', {context: lessons})

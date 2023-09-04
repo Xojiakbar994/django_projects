@@ -5,12 +5,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Darslar ro'yhati</title>
+    <title>Python Lessons</title>
   </head>
   <body>
-    <h1>Darslar royhati</h1>
-    {% for a in value %}
-    <li>{{ a.title }}</li>
+    <h1>Our lesons</h1>
+    {% for lesson in lessons %}
+    <p>{{ lesson.id }}. {{ lesson.lesson_title }}</p>
     {% endfor %}
   </body>
 </html>

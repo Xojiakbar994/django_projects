@@ -2,8 +2,7 @@ from django.db import models
 
 # Create your models here.
 class Lessons(models.Model):
-    title = models.CharField(max_length=255)
-    content = models.TextField()
+    lesson_title = models.CharField(max_length=255, verbose_name='Lesson title')
 
     def __str__(self):
-        return self.title
+        return self.lesson_title

@@ -7,20 +7,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Student Scores List</title>
   </head>
+  <style>
+    table,
+    th,
+    td {
+      border: 1px solid black;
+    }
+  </style>
   <body>
-    <table class="table">
-      <thead>
+    <table style="width: 100%">
+      <tr>
         <th>FIO</th>
         <th>Score</th>
-        <th>Avgust</th>
-      </thead>
-      <tbody>
-        {% for i in object_list %}
-          <td>{{ i.add }}</td>
+        <th>Month</th>
+      </tr>
+      <tr>
+        {% for i in add %}
+        <tr><td>{{ i.name }}</td>
           <td>{{ i.score }}</td>
           <td>{{ i.month }}</td>
+        </tr>        
         {% endfor %}
-      </tbody>
+      </tr>
     </table>
   </body>
 </html>

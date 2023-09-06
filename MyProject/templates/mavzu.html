@@ -11,7 +11,10 @@
     <h1>This is mavzular:</h1>
     <ul>
       {% for i in lessons %}
-      <h2>{{ forloop.counter }}. {{ i.lesson_title }}</h2>
+      <h2>
+        {{ forloop.counter }}. {{ i.lesson_title }} {{ i.lesson_teacher }} {{
+        i.lesson_subject }}
+      </h2>
       {% endfor %}
     </ul>
   </body>

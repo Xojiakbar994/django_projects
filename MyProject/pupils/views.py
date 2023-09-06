@@ -4,7 +4,8 @@ from django.views.generic import ListView
 
 # Create your views here.
 class StudentListView(ListView):
-    def get(self, request, month):
+    def get(self, request):
         students = Student.objects.all()
-        month = Student.objects.filter(month=month)
-        return render(request, 'student_list.html', {'add': students, 'month': month})
+        score = Student.objects.all()
+        month = Student.objects.all()
+        return render(request, 'student_list.html', {'add': students, 'score': score, 'month': month})

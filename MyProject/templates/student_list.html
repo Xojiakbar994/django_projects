@@ -11,12 +11,14 @@
     <table class="table">
       <thead>
         <th>FIO</th>
-        <th>August</th>
+        <th>Score</th>
+        <th>Avgust</th>
       </thead>
       <tbody>
         {% for i in object_list %}
-        <td>{{ i.add }}</td>
-        <td>{{ i.month }}</td>
+          <td>{{ i.add }}</td>
+          <td>{{ i.score }}</td>
+          <td>{{ i.month }}</td>
         {% endfor %}
       </tbody>
     </table>

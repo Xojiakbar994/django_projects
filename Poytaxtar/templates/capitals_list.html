@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+    table,
+    th,
+    td {
+      border: 1px solid black;
+    }
+  </style>
+
+</head>
+<body>
+<h1></h1>
+<div>
+    <button>UZ</button>
+    <button>EN</button>
+    <button>RU</button>
+</div>
+<table class="table", style="width: auto">
+    <thead>
+        <th>#</th>
+        <th>Mamlakat</th>
+        <th>Poytaxt</th>
+    </thead>
+    <tbody>
+        {% for capital in object_list %}
+            <tr>
+                <th>{{ forloop.counter }}</th>
+                <th>{{ capital.contry }}</th>
+                <th>{{ capital.capital }}</th>
+            </tr>
+        {% endfor %}
+    </tbody>
+
+
+
+</table>
+<script>
+        function setLang(lang) {
+            const Http = new XMLHttpRequest();
+            const url='/setLang/' + lang;
+            Http.open("GET", url);
+            Http.send();
+
+            Http.onreadystatechange = (e) => {
+                location.reload();
+            }
+        }
+    </script>
+</body>
+</html>

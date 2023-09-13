@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Countries List</title>
+    <style>
+    table,
+    th,
+    td {
+      border: 1px solid black;
+    }
+  </style>
+</head>
+<body>
+    <h1>World countries list</h1>
+    <table style="width: auto">
+        <tr>
+            <td colspan="5">
+{#            alpha = [A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z.]#}
+              <a href="/countries/?alphabet=A">A</a>
+              <a href="/countries/?alphabet=B">B</a>
+              <a href="/countries/?alphabet=C">C</a>
+              <a href="/countries/?alphabet=D">D</a>
+              <a href="/countries/?alphabet=E">E</a>
+              <a href="/countries/?alphabet=F">F</a>
+              <a href="/countries/?alphabet=G">G</a>
+              <a href="/countries/?alphabet=H">H</a>
+              <a href="/countries/?alphabet=I">I</a>
+              <a href="/countries/?alphabet=J">J</a>
+              <a href="/countries/?alphabet=K">K</a>
+              <a href="/countries/?alphabet=L">L</a>
+              <a href="/countries/?alphabet=M">M</a>
+              <a href="/countries/?alphabet=N">N</a>
+              <a href="/countries/?alphabet=O">O</a>
+              <a href="/countries/?alphabet=P">P</a>
+              <a href="/countries/?alphabet=Q">Q</a>
+              <a href="/countries/?alphabet=R">R</a>
+              <a href="/countries/?alphabet=S">S</a>
+              <a href="/countries/?alphabet=T">T</a>
+              <a href="/countries/?alphabet=U">U</a>
+              <a href="/countries/?alphabet=V">V</a>
+              <a href="/countries/?alphabet=W">W</a>
+              <a href="/countries/?alphabet=X">X</a>
+              <a href="/countries/?alphabet=Y">Y</a>
+              <a href="/countries/?alphabet=Z">Z</a>
+          </td>
+        </tr>
+      <tr>
+          <th>№</th>
+        <th>Name</th>
+        <th>Population <br>(mln. people)</th>
+          <th>Area <br>(km <sup>2</sup>)</th>
+        <th>Density</th>
+      </tr>
+      <tr>
+        {% for country in object_list %}
+        <tr><td>{{ forloop.counter }}</td>
+          <td>{{ country.name }}</td>
+          <td>{{ country.population }}</td>
+          <td>{{ country.area }}</td>
+          <td>{{ country.density }}</td>
+        </tr>
+        {% endfor %}
+      </tr>
+    </table>
+   </body>
+</html>

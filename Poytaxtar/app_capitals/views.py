@@ -17,15 +17,15 @@ class CapitalsListView(ListView):
             lang = "uz"
             queryset = (
                 Capitals.objects.all()
-                .values("contry_" + lang, "capital_" + lang)
-                .annotate(contry=F("contry_" + lang), capital=F("capital_" + lang))
+                .values("country_" + lang, "capital_" + lang)
+                .annotate(country=F("country_" + lang), capital=F("capital_" + lang))
             )
         return queryset
 
 
 def setLanguage(request, lang):
     try:
-        request.session["lang"] == lang
+        request.session["lang"] = lang
         return HttpResponse("ok")
     except:
         return HttpResponse("error")

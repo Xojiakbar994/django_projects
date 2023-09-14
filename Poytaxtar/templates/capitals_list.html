@@ -13,11 +13,11 @@
 
 </head>
 <body>
-<h1></h1>
-<div>
-    <button>UZ</button>
-    <button>EN</button>
-    <button>RU</button>
+
+<div style="float: right">
+        <button onclick="setLang('uz')">UZ</button>
+        <button onclick="setLang('en')">EN</button>
+        <button onclick="setLang('ru')">RU</button>
 </div>
 <table class="table", style="width: auto">
     <thead>
@@ -29,7 +29,7 @@
         {% for capital in object_list %}
             <tr>
                 <th>{{ forloop.counter }}</th>
-                <th>{{ capital.contry }}</th>
+                <th>{{ capital.country }}</th>
                 <th>{{ capital.capital }}</th>
             </tr>
         {% endfor %}

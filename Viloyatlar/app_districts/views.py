@@ -8,9 +8,10 @@ from .models import Districts
 # Create your views here.
 class DistrictsListView(ListView):
     # model = Districts
+    template_name = "index.html"
 
-    @property
     def get_queryset(self):
+        queryset = None
         try:
             lang = self.request.session["lang"]
         except:
@@ -22,10 +23,8 @@ class DistrictsListView(ListView):
             )
         return queryset
 
-    template_name = "index.html"
 
-
-def setLanguage(request, lang):
+def set_language(request, lang):
     try:
         request.session["lang"] = lang
         return HttpResponse("ok")

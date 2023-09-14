@@ -4,6 +4,11 @@
 <head>
     <meta charset="UTF-8">
     <title></title>
+    <style>
+        th, td {
+            border: 1px solid black;
+        }
+    </style>
 </head>
 <body>
     <div style="float: right">
@@ -11,31 +16,21 @@
         <button onclick="setLang('en')">EN</button>
         <button onclick="setLang('ru')">RU</button>
     </div>
-    <h1></h1>
+
     <table class="table table-dark">
         <thead>
             <th scope="col">#</th>
             <th scope="col">Tumanlar nomi</th>
-{#            <th scope="col">Districts name</th>#}
-{#            <th scope="col">Название областей</th>#}
-
         </thead>
         <tbody>
-            {% for i in object_list %}
+            {% for districts in object_list %}
                 <tr>
                     <th>{{ forloop.counter }}</th>
-                    <td>{{ i.district_name }}</td>
+                    <td>{{ districts.district_name }}</td>
                 </tr>
             {% endfor %}
-
         </tbody>
     </table>
-
-    <style>
-        th, td {
-            border: 1px solid black;
-        }
-    </style>
 
     <script>
         function setLang(lang) {

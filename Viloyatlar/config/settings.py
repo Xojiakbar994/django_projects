@@ -21,7 +21,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "django-insecure-!3%(@03cc!-)yu(76n89*e$^ep&f$i=d261&-nh*vj@yo+s*xf"
+SECRET_KEY = "django-insecure-hzq2#x%!5_8hh*3%su!uaeti@89e_=n)*qah)2$uwtfcmj4q_u"
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -38,8 +38,8 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    # My_Apps
-    "app_capitals",
+    # MyApps
+    "app_districts",
 ]
 
 MIDDLEWARE = [
@@ -81,7 +81,7 @@ DATABASES = {
         # "ENGINE": "django.db.backends.sqlite3",
         # "NAME": BASE_DIR / "db.sqlite3",
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": "capital_db",
+        "NAME": "district_db",
         "USER": "postgres",
         "PASSWORD": "postgres",
         "HOST": "localhost",
@@ -117,7 +117,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = "en-us"
 
-TIME_ZONE = "ASIA/Tashkent"
+TIME_ZONE = "Asia/Tashkent"
 
 USE_I18N = True
 

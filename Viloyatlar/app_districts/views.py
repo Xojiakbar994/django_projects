@@ -11,16 +11,16 @@ class DistrictsListView(ListView):
     template_name = "index.html"
 
     def get_queryset(self):
-        queryset = None
+        # queryset = None
         try:
             lang = self.request.session["lang"]
         except:
             lang = "uz"
-            queryset = (
-                Districts.objects.all()
-                .values("district_name_" + lang)
-                .annotate(district_name=F("district_name_" + lang))
-            )
+        queryset = (
+            Districts.objects.all()
+            .values("district_name_" + lang)
+            .annotate(district_name=F("district_name_" + lang))
+        )
         return queryset
 
 

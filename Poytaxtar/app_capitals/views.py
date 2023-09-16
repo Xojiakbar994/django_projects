@@ -15,11 +15,12 @@ class CapitalsListView(ListView):
             lang = self.request.session["lang"]
         except:
             lang = "uz"
-            queryset = (
-                Capitals.objects.all()
-                .values("country_" + lang, "capital_" + lang)
-                .annotate(country=F("country_" + lang), capital=F("capital_" + lang))
-            )
+
+        queryset = (
+            Capitals.objects.all()
+            .values("country_" + lang, "capital_" + lang)
+            .annotate(country=F("country_" + lang), capital=F("capital_" + lang))
+        )
         return queryset
 
 

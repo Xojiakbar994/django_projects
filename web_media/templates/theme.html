@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Themes List
+{% endblock %}
+
+{% block content %}
+    <ul>
+        <h1>Themes List</h1>
+    </ul>
+
+    <ul>
+    {% for i in object_list %}
+        <p><a href="/plans?plan_theme={{ i.id }}">{{ forloop.counter }}. {{ i.theme }}</a></p>
+    {% endfor %}
+    </ul>
+{% endblock %}
+

@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Plans list
+{% endblock %}
+
+{% block content %}
+    <ul>
+        <h1>Plans list</h1>
+    </ul>
+
+    <ul>
+        {% for plans in object_list %}
+            <li>{{ plans.plan }}</li><br>
+            <p>{{ plans.plan_text }}</p>
+            <br>
+            <br>
+            <br>
+        {% endfor %}
+    </ul>
+{% endblock %}

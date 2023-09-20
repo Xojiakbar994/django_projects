@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    Recipes list
+{% endblock %}
+
+{% block content %}
+    <ul>
+        <h1>Recipes list</h1>
+    </ul>
+
+    <ul>
+        {% for i in object_list %}
+            <p>{{ i.recipe }}</p>
+        {% endfor %}
+    </ul>
+
+    <script>
+        function setLang(lang) {
+            const Http = new XMLHttpRequest();
+            const url='/setLang/' + lang;
+            Http.open("GET", url);
+            Http.send();
+
+            Http.onreadystatechange = (e) => {
+                location.reload();
+            }
+        }
+    </script>
+{% endblock %}

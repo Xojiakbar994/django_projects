@@ -50,6 +50,18 @@
         <div >
             <button onclick="setLang('uz')">UZ</button>
             <button onclick="setLang('en')">EN</button>
+                <script>
+                    function setLang(lang) {
+                        const Http = new XMLHttpRequest();
+                        const url='/setLang/' + lang;
+                        Http.open("GET", url);
+                        Http.send();
+
+                        Http.onreadystatechange = (e) => {
+                            location.reload();
+                        }
+                    }
+                </script>
         </div>
     </div>
     <h1>Uzbek foods app</h1>
